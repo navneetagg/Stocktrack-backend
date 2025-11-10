@@ -17,7 +17,7 @@ const createProduct = asynchandler(async(req,res)=>{
     }
 )
 const getProducts = asynchandler(async(req,res)=>{
- const products = await Product.find({});
+ const products = await Product.find({}).sort({createdAt:-1});
  if(products){
     res.status(200).json(products);
  }
